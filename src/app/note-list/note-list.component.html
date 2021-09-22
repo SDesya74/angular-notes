@@ -1,0 +1,3 @@
+<div class="note_list">
+  <app-blog-note *ngFor="let note of notes$ | async" [id]="note.id" [title]="note.title" [content]="note.content"></app-blog-note>
+</div>

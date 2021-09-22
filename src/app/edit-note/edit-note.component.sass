@@ -1,0 +1,64 @@
+:host
+  padding: 24px
+
+*
+  box-sizing: border-box
+
+.content
+  display: flex
+  margin: 0 auto 32px
+  padding: 0 16px
+  max-width: 960px
+  flex-direction: column
+  align-items: start
+
+/* Note Form */
+
+.note_form
+  width: 100%
+  padding: 0
+
+.note_form__title
+  width: 100%
+  padding: 3px
+
+.note_form__spacer
+  height: 24px
+
+.note_form__content
+  width: 100%
+  min-width: 100%
+  max-width: 100%
+  min-height: 100px
+  max-height: 500px
+  padding: 3px
+
+.note_form__button_row
+  width: 100%
+  display: flex
+  flex-direction: row-reverse
+  justify-content: space-between
+
+.note_form__button_delete
+  cursor: pointer
+  padding: 10px 20px
+
+.note_form__button_save
+  padding: 10px 20px
+
+  // другие кнопки не имеют задизейбленного состояния, поэтому это условие только тут
+  &:not(:disabled)
+    cursor: pointer
+
+.back_link
+  display: block
+  padding: 5px 10px
+  background: #FCFCFC
+  border: solid grey 1px
+  border-radius: 4px
+  cursor: pointer
+  text-decoration: none
+  color: black
+
+.back_link:before
+  content: "←"

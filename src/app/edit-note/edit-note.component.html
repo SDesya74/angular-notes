@@ -1,0 +1,24 @@
+<main class="content">
+  <a class="back_link" [routerLink]="['/']"> Назад </a>
+  <form class="note_form" #f="ngForm">
+
+    <h1> Запись "{{ title }}" </h1>
+    <input class="note_form__title" type="text" name="title" [(ngModel)]="title" required />
+
+    <div class="note_form__spacer"></div>
+
+    <textarea class="note_form__content" type="text" name="content" [(ngModel)]="content" required></textarea>
+
+    <div class="note_form__spacer"></div>
+
+    <div class="note_form__button_row">
+      <!--
+        Кнопки поменяны местами для соблюдения правильного порядка индексов,
+        я решил, что лучше сделать так, чем городить tabindex в CSS
+      -->
+      <button class="note_form__button_save" name="save" [disabled]="!f.valid" (click)="onSubmit()"> Сохранить </button>
+      <button class="note_form__button_delete" name="delete" (click)="onDelete()"> Удалить </button>
+    </div>
+
+  </form>
+</main>

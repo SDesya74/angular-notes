@@ -1,0 +1,20 @@
+<main class="content">
+    <a class="back_link" [routerLink]="['/']"> Назад </a>
+    <form class="note_form" #f="ngForm">
+
+      <h1> Запись "{{ f.value.title }}" </h1>
+      <!-- двойной бинд тут выполнен с помощью f.value, вместо "банано-коробочной" вариации, поскольку так красивей :) -->
+      <input class="note_form__title" type="text" name="title" ngModel required />
+
+      <div class="note_form__spacer"></div>
+
+      <textarea class="note_form__content" type="text" name="content" ngModel required></textarea>
+
+      <div class="note_form__spacer"></div>
+
+      <div class="note_form__button_row">
+        <button class="note_form__button_save" name="save" [disabled]="!f.valid" (click)="onSubmit(f)"> Сохранить </button>
+      </div>
+
+    </form>
+</main>
