@@ -1,6 +1,4 @@
-import { state } from '@angular/animations'
 import { Component, OnInit } from '@angular/core'
-import { NgForm } from '@angular/forms'
 import { ActivatedRoute, Router } from '@angular/router'
 import { Store } from '@ngxs/store'
 import { NoteModel } from 'state/notes.state'
@@ -37,13 +35,13 @@ export class EditNoteComponent implements OnInit {
 
   onSubmit() {
     this.store.dispatch(new Note.Save(this.id, this.title, this.content)).subscribe(e => {
-      this.router.navigate(['/']);
+      this.router.navigate([ '/' ])
     })
   }
 
   onDelete() {
     this.store.dispatch(new Note.Delete(this.id)).subscribe(e => {
-      this.router.navigate(['/']);
+      this.router.navigate([ '/' ])
     })
   }
 

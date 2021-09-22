@@ -17,8 +17,20 @@
         я решил, что лучше сделать так, чем городить tabindex в CSS
       -->
       <button class="note_form__button_save" name="save" [disabled]="!f.valid" (click)="onSubmit()"> Сохранить </button>
-      <button class="note_form__button_delete" name="delete" (click)="onDelete()"> Удалить </button>
+      <button class="note_form__button_delete" name="delete" (click)="modal.style.display = 'block'"> Удалить </button>
     </div>
 
   </form>
 </main>
+
+<!-- Модальное окно -->
+<div #modal class="modal">
+  <div class="modal__content">
+    <span class="modal__close" (click)="modal.style.display = 'none'">&times;</span>
+    <h2> Удалить запись? </h2>
+    <div class="modal__button_row">
+      <button class="modal__button_ok" (click)="modal.style.display = 'none'"> Отмена </button>
+      <button class="modal__button_delete" (click)="onDelete()"> Удалить </button>
+    </div>
+  </div>
+</div>
