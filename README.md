@@ -1,6 +1,7 @@
 # AngularNotes
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.6.
+Demo is available on [ratat.art](https://notes.ratat.art)
 
 ## Development server
 
